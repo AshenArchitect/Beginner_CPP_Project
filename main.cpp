@@ -87,7 +87,7 @@ void get_username(std::string& username){
     #if defined(_WIN32) || defined(_WIN64)
         TCHAR name [UNLEN + 1];
         DWORD size = UNLEN + 1;
-        GetUserName((TCHAR*)name, &size)
+        GetUserName((TCHAR*)name, &size);
         username = name;
     #elif unix
         char user_name_array[32];
@@ -95,7 +95,7 @@ void get_username(std::string& username){
         username = user_name_array;
     #else
         username = "Unknown";
-        username += " (You're on Mac!!!) "
+        username += " (You're on Mac?) ";
     #endif
 }
 
